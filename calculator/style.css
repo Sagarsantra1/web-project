@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.main{
+    height: 80vh;
+    width: 200px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.ruselt{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.input{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-top: 1px solid gray;
+}
+.sowinput{
+    border-top: 1px solid gray;
+    height: 35px;
+    width: 100%;
+    text-align: right;
+    font-size: 1.7rem;
+    padding: 5px 5px;
+}
+.row{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.i{
+    height: 80%;
+    width: 20%;
+    min-height: 40px;
+    min-width: 40px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+#row1,.c4{
+    color: orangered;
+}
+.i:hover{
+    background-color: orangered;
+    transition: all 0.5s ease;
+    color: black;
+}
+.i:active{
+    background-color: rgb(59, 18, 4);
+}
+#i17:hover{
+    background-color: rgba(255, 68, 0, 0);
+}
+i{
+    pointer-events: none;
+}
+@media screen and (max-width: 425px) {
+    body{
+        align-items: flex-end;
+    }
+    .main{
+        height: 95vh;
+        width: 90vw;
+        padding: 0 20px;
+    }
+    .ruselt{
+        height: 60;
+    }
+    .input{
+        height: 40%;
+    }
+    .i{
+        height: 50px;
+        width: 50px;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .main{
+        height: 95vh;
+        width: 90vw;
+    }
+}

@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+body::after,
+body::before {
+    content: "";
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+body::after {
+    top: 10px;
+    right: 30vw;
+    background-image: linear-gradient(to right, #38f9ef 0%, #43e97b 100%);
+}
+
+body::before {
+    bottom: 15vh;
+    left: 25vw;
+    background-image: linear-gradient(120deg, #f5576c 0%, #f093fb 100%);
+}
+
+.contener {
+    height: 80vh;
+    max-height: 500px;
+    font-size: 16px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.titel {
+    font-size: 2.5em;
+    padding: 10px;
+}
+
+.signal {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.score {
+    padding: 10px;
+    align-self: flex-start;
+}
+
+input,
+input:focus-visible {
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+    background: none;
+    border-bottom: 1px solid black;
+    transition: all 1s ease;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.chack {
+    padding: 8px 17px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    align-self: flex-start;
+    cursor: pointer;
+
+    background-color: rgb(209, 106, 250);
+}
+
+.chack:active {
+    background-color: rgb(132, 74, 156);
+}
+
+.about {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 10vh;
+    right: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.2px);
+    -webkit-backdrop-filter: blur(13.2px);
+    border: 1px solid rgba(255, 255, 255, 0.59);
+    transition: 0.2s;
+}
+
+.about ul {
+    padding: 5px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.about li {
+    padding: 5px 0px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.about a img {
+    width: 40px;
+}
+
+.about_active {
+    height: 450px;
+    width: 300px;
+    transition: 0.2s;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 2px 5px;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 8vh;
+    right: 5vw;
+    z-index: 3;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: 0.2s;
+}
+
+span {
+    display: flex;
+    align-items: center;
+}
+
+.active span {
+    display: none;
+}
+
+.active {
+    background-image: url(https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    bottom: calc(10vh + 420px);
+    right: 4.9vw;
+}
+
+@media screen and (max-width: 600px) {
+    body::before {
+        bottom: 20vh;
+        left: -5vw;
+    }
+
+    body::after {
+        top: 5vh;
+        right: 0;
+    }
+
+    .contener {
+        font-size: 12px;
+        width: 90vw;
+    }
+
+    .score {
+        font-size: 1.5em;
+    }
+
+    input,
+    input:focus-visible {
+        font-size: 1.5em;
+    }
+
+    .chack {
+        padding: 10px 20px;
+        font-size: 1.5em;
+    }
+
+    .signal {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .about {
+        width: 0vw;
+        height: 0vh;
+        bottom: 8vh;
+        right: 5vw;
+        margin: auto;
+    }
+
+    .active {
+        bottom: calc(4vh + 70vh);
+        right: 4.9vw;
+    }
+
+    .about_active {
+        width: 90vw;
+        height: 70vh;
+    }
+
+}
+
+@media screen and (min-height: 1000px) {
+    body::before {
+        bottom: 25vh;
+        left: 10vw;
+    }
+
+    body::after {
+        top: 20vh;
+        right: 20vw;
+    }
+
+}

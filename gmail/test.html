@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 100px;
+            width: 100vw;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #time{
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        Time
+        <h1 id="time"></h1>
+    </div>
+    <script>
+        let time = document.querySelector('#time')
+        setInterval(updatetime, 1000);
+        function updatetime(){
+            date =  new Date()
+            nt = date.getHours() + (":") + date.getMinutes() + (":") + date.getSeconds();
+            time.innerHTML = nt
+        }
+
+    </script>
+</body>
+
+</html>

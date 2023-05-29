@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess The Number</title>
+</head>
+
+<body>
+    <div class="contener">
+        <div class="titel">Guess The number</div>
+        <div class="signal"></div>
+        <div class="score"></div>
+        <input type="number" class="input" id="input" max="5">
+        <button class="chack">Check</button>
+    </div>
+    <div class="btn">
+        <span>
+            About
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/about.png" />
+        </span>
+    </div>
+    <div class="about">
+        <h2>About</h2>
+        <ul>
+            <li class="content">You need to guess a random nunber generate by computer.</li>
+            <li class="content">Number wil be betwen 1-100.</li>
+            <li class="content">to play Just write the number and click on chack or press enter.</li>
+            <li class="content">ou can see your number is equel or Greater or Lesser then the generated number.</li>
+            <li class="content">Your score will be based on how many try you take to guess the correct number.</li>
+        </ul>
+        <h4>Created by</h4>
+        <h3>Sagar Santra</h3>
+        <div class="social">
+            <a href="https://twitter.com/SagarSa03495060" class="twitter" target="_blank"><img
+                    src="https://img.icons8.com/color/48/000000/twitter-circled--v4.png" /></a>
+            <a href="https://www.instagram.com/sagarsantra397" class="insta" target="_blank"><img
+                    src="https://img.icons8.com/color/48/000000/instagram-new--v2.png" /></a>
+        </div>
+    </div>
+
+    <script>
+        let answer = Math.floor(Math.random() * 100);
+        const chack = document.querySelector('.chack')
+        const signal = document.querySelector('.signal')
+        const btn = document.querySelector('.btn')
+        let score = document.querySelector('.score')
+        let guess = 0
+
+        btn.onclick = () => {
+            btn.classList.toggle("active")
+            document.querySelector('.about').classList.toggle("about_active")
+        }
+
+        input.addEventListener('keypress', (event) => {
+            if (event.key === "Enter") {
+                chack.click()
+            }
+        })
+
+        chack.addEventListener('click', () => {
+            const input = document.getElementById('input')
+            score.innerHTML = ""
+
+            const show = (a) => {
+                signal.innerHTML = "number is " + a + " then " + input.value
+                input.value = ''
+            }
+
+            if (answer > input.value) {
+                show("Greater")
+            }
+            else if (answer < input.value) {
+                show("Lesser")
+            }
+            else {
+                signal.innerHTML = "Congratulations " + answer + " is the right number"
+                score.innerHTML = "your score is " + (100 - guess)
+                guess = -1
+                input.value = ''
+                answer = Math.floor(Math.random() * 100);
+            }
+            guess++
+        })
+    </script>
+</body>
+
+</html>
